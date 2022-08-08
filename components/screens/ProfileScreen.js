@@ -18,7 +18,7 @@ function ProfileScreen() {
 
   const getUser = async () => {
     try {
-      const savedUser = await AsyncStorage.getItem("user");
+      const savedUser = await AsyncStorage.getItem("userData");
       const currentUser = JSON.parse(savedUser);
       if (currentUser !== null || currentUser !== undefined) {
         // console.log("Fetched update ", currentUser);

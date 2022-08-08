@@ -46,92 +46,85 @@ const AuthNavigator = () => {
     <NavigationContainer initialRouteName={sceneName}>
       {/* <Stack.Navigator initialRouteName={auth != null ? "Home" : "Drawer"}> */}
       <Stack.Navigator>
-        {isSignedIn ? (
-          <>
-            <Stack.Screen
-              name="Home"
-              component={HomeScreen}
-              options={{
-                title: "Location detector",
-                headerTintColor: "#fff",
-                headerStyle: {
-                  backgroundColor: "#5D63F5",
-                },
-              }}
-            />
-            <Stack.Screen
-              name="Login"
-              component={LoginScreen}
-              options={{
-                title: "Location detector",
-                headerTintColor: "#fff",
-                headerStyle: {
-                  backgroundColor: "#5D63F5",
-                },
-              }}
-            />
-            <Stack.Screen
-              name="Register"
-              component={RegisterScreen}
-              options={{
-                title: "Location detector",
-                headerTintColor: "#fff",
-                headerStyle: {
-                  backgroundColor: "#5D63F5",
-                },
-              }}
-            />
-          </>
-        ) : (
-          <>
-            <Stack.Screen
-              name="Profile"
-              component={ProfileScreen}
-              options={{
-                title: "Location detector",
-                headerTintColor: "#fff",
-                headerStyle: {
-                  backgroundColor: "#5D63F5",
-                },
-              }}
-            />
-            <Stack.Screen
-              name="Dashboard"
-              component={DashboardScreen}
-              options={{
-                title: "Location detector",
-                headerTintColor: "#fff",
-                headerStyle: {
-                  backgroundColor: "#5D63F5",
-                },
-              }}
-            />
-            <Stack.Screen
-              name="UpdateProfile"
-              component={UpdateProfileScreen}
-              options={{
-                title: "Location detector",
-                headerTintColor: "#fff",
-                headerStyle: {
-                  backgroundColor: "#5D63F5",
-                },
-              }}
-            />
-            <Stack.Screen
-              name="Drawer"
-              component={DawerScreen}
-              options={{
-                title: "Location detector",
-                headerTintColor: "#fff",
-                headerShown: false,
-                headerStyle: {
-                  backgroundColor: "#5D63F5",
-                },
-              }}
-            />
-          </>
-        )}
-        ;
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            title: "Location detector",
+            headerTintColor: "#fff",
+            headerStyle: {
+              backgroundColor: "#5D63F5",
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{
+            title: "Location detector",
+            headerTintColor: "#fff",
+            headerStyle: {
+              backgroundColor: "#5D63F5",
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Register"
+          component={RegisterScreen}
+          options={{
+            title: "Location detector",
+            headerTintColor: "#fff",
+            headerStyle: {
+              backgroundColor: "#5D63F5",
+            },
+          }}
+        />
+
+        <Stack.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{
+            title: "Location detector",
+            headerTintColor: "#fff",
+            headerStyle: {
+              backgroundColor: "#5D63F5",
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Dashboard"
+          component={DashboardScreen}
+          options={{
+            title: "Location detector",
+            headerTintColor: "#fff",
+            headerStyle: {
+              backgroundColor: "#5D63F5",
+            },
+          }}
+        />
+        <Stack.Screen
+          name="UpdateProfile"
+          component={UpdateProfileScreen}
+          options={{
+            title: "Location detector",
+            headerTintColor: "#fff",
+            headerStyle: {
+              backgroundColor: "#5D63F5",
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Drawer"
+          component={DawerScreen}
+          options={{
+            title: "Location detector",
+            headerTintColor: "#fff",
+            headerShown: false,
+            headerStyle: {
+              backgroundColor: "#5D63F5",
+            },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

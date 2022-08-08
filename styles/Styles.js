@@ -1,9 +1,12 @@
 /** @format */
 import { StyleSheet, Dimensions } from "react-native";
+
+import colors from "../config/Colors";
+
 const styles = StyleSheet.create({
   mainConatiner: {
     flex: 1,
-    backgroundColor: "#5D63F5",
+    backgroundColor: colors.primary,
     width: "100%",
     alignItems: "center",
     justifyContent: "center",
@@ -11,7 +14,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
-    backgroundColor: "#5D63F5",
+    backgroundColor: colors.primary,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -20,7 +23,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   headertext: {
-    color: "#ffff",
+    color: colors.colorWhite,
     fontSize: 20,
     fontWeight: "bold",
     alignContent: "center",
@@ -31,7 +34,7 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
-    backgroundColor: "#ffff",
+    backgroundColor: colors.colorWhite,
     fontWeight: "bold",
   },
   blockButton: {
@@ -39,7 +42,7 @@ const styles = StyleSheet.create({
     height: 50,
     display: "flex",
     alignItems: "center",
-    backgroundColor: "#F59B15",
+    backgroundColor: colors.btnColor,
     elevation: 2,
     padding: 10,
     marginLeft: 75,
@@ -48,7 +51,7 @@ const styles = StyleSheet.create({
     borderRadius: 45,
   },
   buttonText: {
-    color: "#ffff",
+    color: colors.colorWhite,
     fontWeight: "bold",
     fontSize: 20,
   },
@@ -61,17 +64,17 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "left",
     paddingLeft: 20,
-    color: "#ffff",
+    color: colors.colorWhite,
   },
   profile: {
     padding: 30,
   },
   card: {
-    backgroundColor: "5D63F5",
+    backgroundColor: colors.colorWhite,
   },
   navDrawer: {
-    backgroundColor: "5D63F5",
-    color: "#ffff",
+    backgroundColor: colors.primary,
+    color: colors.colorWhite,
   },
 });
 export default styles;
