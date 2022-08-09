@@ -10,23 +10,23 @@ import AppButton from "../forms/AppButton";
 
 function HomeScreen({ navigation }) {
   const [userStatus, setUserStatus] = useState(false);
-  useEffect(() => {
-    getUser();
-  }, []);
+  // useEffect(() => {
+  //   getUser();
+  // }, []);
 
-  const getUser = async () => {
-    let context = this;
-    try {
-      let value = await AsyncStorage.getItem("user");
-      if (value != null) {
-        navigation.navigate("Drawer");
-        setUserStatus(true);
-      }
-    } catch (error) {
-      // Error retrieving data
-      alert(error);
-    }
-  };
+  // const getUser = async () => {
+  //   let context = this;
+  //   try {
+  //     let value = await AsyncStorage.getItem("user");
+  //     if (value != null) {
+  //       navigation.navigate("Drawer");
+  //       setUserStatus(true);
+  //     }
+  //   } catch (error) {
+  //     // Error retrieving data
+  //     alert(error);
+  //   }
+  // };
   return (
     <View style={styles.mainConatiner}>
       <MaterialCommunityIcons name="map-marker" size={200} color="#F59B15" />

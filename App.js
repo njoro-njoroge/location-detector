@@ -1,8 +1,15 @@
 /** @format */
-import React from "react";
+import React, { useState } from "react";
 
 import AuthNavigator from "./components/navigation/AuthNavigator";
-export default function App() {
-  return <AuthNavigator />;
-}
+import { NavigationContainer } from "@react-navigation/native";
+import DrawerScreen from "./components/screens/DrawerScreen";
 
+export default function App() {
+  const [isLoading, setIsLoading] = useState(false);
+  return (
+    <NavigationContainer>
+      {isLoading !== true ? <AuthNavigator /> : <DrawerScreen />}
+    </NavigationContainer>
+  );
+}

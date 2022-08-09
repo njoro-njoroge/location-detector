@@ -6,7 +6,8 @@ import { Text, View } from "react-native";
 import * as Location from "expo-location";
 
 import styles from "../../styles/Styles";
-export default function DashboardScreen(props) {
+
+export default function DashboardScreen() {
   const [locationStatus, setLocationStatus] = useState(false);
   const [currentLongitude, setCurrentLongitude] = useState(null);
   const [currentLatitude, setCurrentLatitude] = useState(null);
@@ -81,10 +82,7 @@ export default function DashboardScreen(props) {
           //   });
           // }}
         >
-          <Marker
-            coordinate={pin}
-            description="Current location"
-          ></Marker>
+          <Marker coordinate={pin} description="Current location"></Marker>
           {/* <Circle
             center={pin}
             radius={5}

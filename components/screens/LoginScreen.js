@@ -5,12 +5,7 @@ import React, { useEffect, useState } from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import NetInfo from "@react-native-community/netinfo";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {
-  View,
-  Text,
-  Keyboard,
-  ActivityIndicator,
-} from "react-native";
+import { View, Text, Keyboard, ActivityIndicator } from "react-native";
 
 import styles from "../../styles/Styles";
 import AppButton from "../forms/AppButton";
@@ -49,7 +44,7 @@ function LoginScreen({ navigation }) {
       password: password,
     })
       .then((result) => {
-        // console.log("RESULTS FROM SERVER ", result.data);
+        console.log("RESULTS FROM SERVER ", result.data);
         if (result.status == 200) {
           if (result.data.Message == true) {
             setIsloading(false);
@@ -66,7 +61,7 @@ function LoginScreen({ navigation }) {
               try {
                 await AsyncStorage.setItem("userData", JSON.stringify(logUser));
                 const values = await AsyncStorage.getItem("userData");
-                const person = JSON.parse(values);
+                // const person = JSON.parse(values);
                 // console.log("THIS PERSON ", person);
                 navigation.navigate("Drawer");
               } catch (error) {

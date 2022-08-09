@@ -39,9 +39,10 @@ function CustomDrawerContent(props) {
 const Drawer = createDrawerNavigator();
 const NavigationDrawer = () => {
   return (
+    // <NavigationContainer>
     <Drawer.Navigator
       drawerContent={(props) => <CustomDrawerContent {...props} />}
-      initialRouteName="Home"
+      // initialRouteName="Home"
     >
       <Drawer.Screen
         name="Dashboard"
@@ -75,6 +76,7 @@ const NavigationDrawer = () => {
         }}
       />
     </Drawer.Navigator>
+    // </NavigationContainer>
   );
 };
 

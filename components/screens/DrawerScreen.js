@@ -2,9 +2,8 @@
 
 import * as React from "react";
 import NavigationDrawer from "../navigation/NavigationDrawer";
-
-function DawerScreen(props) {
+function DrawerScreen() {
   return <NavigationDrawer />;
 }
 
-export default DawerScreen;
+export default DrawerScreen;
