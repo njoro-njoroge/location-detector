@@ -3,12 +3,13 @@
 import React, { useEffect, useState } from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import styles from "../../styles/Styles";
 import { View, Text, Keyboard } from "react-native";
 
 import AppButton from "../forms/AppButton";
 import AppTextInput from "../forms/AppTextInput";
 import { clientUpdate } from "../../Apis/ClientApis";
+import styles from "../../styles/Styles";
+import { ActivityIndicator } from "react-native-paper";
 
 function UpdateProfileScreen({ navigation }) {
   const [firstName, setFirstName] = useState("");
@@ -21,11 +22,15 @@ function UpdateProfileScreen({ navigation }) {
     try {
       const savedUser = await AsyncStorage.getItem("userData");
       const currentUser = JSON.parse(savedUser);
+      // setUserID(currentUser.userID);
+      // setFirstName(currentUser.firstName);
+      // setLastName(currentUser.lastName);
+      // setUserName(currentUser.username);
       setUserID(currentUser[0]);
       setFirstName(currentUser[1]);
       setLastName(currentUser[2]);
       setUserName(currentUser[3]);
-      // console.log(currentUser);
+      console.log(currentUser);
     } catch (error) {
       console.log(error);
     }
@@ -54,6 +59,30 @@ function UpdateProfileScreen({ navigation }) {
           if (result.data.Message == true) {
             setIsLoading(false);
             alert(result.data.detail);
+            // const editUser = [
+            //   userID.userID,
+            //   firstName.firstName,
+            //   lastName.lastName,
+            //   username.username,
+            // ];
+            const newUpdate = [userID, firstName, lastName, username];
+            console.log("NEW UPDATE ", newUpdate);
+            const storeUser = async () => {
+              try {
+                await AsyncStorage.setItem(
+                  "userData",
+                  JSON.stringify(newUpdate)
+                );
+                const savedUser = await AsyncStorage.getItem("userData");
+                const currentUser = JSON.parse(savedUser);
+
+                alert("Updated successfully ");
+              } catch (error) {
+                alert("ERROR ", currentUser);
+                console.log(error);
+              }
+            };
+            storeUser();
             navigation.navigate("Profile");
           } else {
             alert(result.data.detail);
@@ -69,63 +98,6 @@ function UpdateProfileScreen({ navigation }) {
         setIsLoading(false);
       });
   };
-  // useEffect(() => {
-  //   const UpdateUser = async () => {
-  //     if (
-  //       firstName.length == 0 ||
-  //       lastName.length == 0 ||
-  //       username.length == 0
-  //     ) {
-  //       alert("All feilds are required!");
-  //       setIsSubmit(false);
-  //       return;
-  //     }
-  //     const UpdateURL =
-  //       "http://192.168.90.225/react_native/location_detector/update_profile.php";
-  //     const headers = {
-  //       Accept: "application/json",
-  //       "Content-Type": "application/json",
-  //     };
-  //     const Data = {
-  //       firstName: firstName,
-  //       lastName: lastName,
-  //       username: username,
-  //       userID: userID,
-  //     };
-  //     fetch(UpdateURL, {
-  //       method: "POST",
-  //       headers: headers,
-  //       body: JSON.stringify(Data),
-  //     })
-  //       .then((response) => response.json())
-  //       .then((response) => {
-  //         // console.log(response);
-  //         alert(response[0].Message);
-  //         setIsSubmit(false);
-
-  //         const newUpdate = [userID, firstName, lastName, username];
-
-  //         const storeUser = async () => {
-  //           try {
-  //             await AsyncStorage.setItem("userData", JSON.stringify(newUpdate));
-  //             getUser();
-  //           } catch (error) {
-  //             console.log(error);
-  //           }
-  //         };
-
-  //         storeUser();
-  //         getUser();
-  //         navigation.navigate("Profile");
-  //       })
-  //       .catch((error) => {
-  //         alert("ERROR!! " + error);
-  //         setIsSubmit(false);
-  //         console.log("ERROR", error);
-  //       });
-  //   };
-  //   if (isSubmit) UpdateUser();
-  // }, [isSubmit]);
 
   return (
     <View style={styles.container}>

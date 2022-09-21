@@ -61,8 +61,8 @@ function LoginScreen({ navigation }) {
               try {
                 await AsyncStorage.setItem("userData", JSON.stringify(logUser));
                 const values = await AsyncStorage.getItem("userData");
-                // const person = JSON.parse(values);
-                // console.log("THIS PERSON ", person);
+                const person = JSON.parse(values);
+                console.log("THIS PERSON ", person);
                 navigation.navigate("Drawer");
               } catch (error) {
                 console.log(error);

@@ -10,6 +10,7 @@ function ProfileScreen() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [username, setUserName] = useState("");
+
   useFocusEffect(
     useCallback(() => {
       getUser();

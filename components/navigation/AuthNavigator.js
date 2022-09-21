@@ -8,6 +8,7 @@ import HomeScreen from "../screens/HomeScreen";
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import DrawerScreen from "../screens/DrawerScreen";
+import ManualPolygons from "../screens/ManualPolygons";
 const Stack = createNativeStackNavigator();
 
 const AuthNavigator = () => {

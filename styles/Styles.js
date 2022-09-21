@@ -76,5 +76,13 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     color: colors.colorWhite,
   },
+  // item: {
+  //   flex: 1,
+  //   width: "100%",
+  //   backgroundColor: "#f9c2ff",
+  //   padding: 20,
+  //   marginVertical: 4,
+  //   marginHorizontal: 6,
+  // },
 });
 export default styles;
